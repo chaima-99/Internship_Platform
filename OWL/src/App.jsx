@@ -1,11 +1,11 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Navbar from './components/Navbar';
-import Home from './components/Home';
-import Features from './components/Features';
-import Internships from './components/Internships';
-import About from './components/About';
-import Contact from './components/Contact';
-import Apply from './components/Apply';
+import Navbar from '../components/NavBar';
+import Home from '../components/Home';
+import Features from '../components/Features';
+import Internships from '../components/Internships';
+import About from '../components/About';
+import Contact from '../components/Contact';
+import Apply from '../components/Apply';
 function App() {
   return (
     <BrowserRouter>
