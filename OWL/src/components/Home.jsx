@@ -13,7 +13,7 @@ import {
 } from 'lucide-react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
-import Navbar from './Navbar';
+import Navbar from './NavBar';
 import Footer from './Footer';
 import heroimg from '../assets/heroimg.png'; 
 
