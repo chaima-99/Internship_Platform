@@ -12,6 +12,14 @@ import {
 import owl from '../assets/owl.png'; 
 
 const Footer = () => {
+  // Social media links 
+  const socialLinks = {
+    facebook: "https://facebook.com/owlai", 
+    twitter: "https://twitter.com/owlai", 
+    linkedin: "https://www.linkedin.com/company/overload-ware-labs-ai/", 
+    instagram: "https://instagram.com/owlai" 
+  };
+
   return (
     <footer className="bg-gray-800 text-white">
       <div className="w-full px-4 sm:px-6 lg:px-8 py-12">
@@ -33,10 +41,42 @@ const Footer = () => {
                Redefining how students and freshers gain practical experience through virtual internships in tech fields.
             </p>
             <div className="flex space-x-4">
-              <Facebook className="h-5 w-5 text-blue-600 hover:text-blue-400 cursor-pointer transition-colors" />
-              <Twitter className="h-5 w-5 text-blue-600 hover:text-blue-400 cursor-pointer transition-colors" />
-              <Linkedin className="h-5 w-5 text-blue-600 hover:text-blue-400 cursor-pointer transition-colors" />
-              <Instagram className="h-5 w-5 text-blue-600 hover:text-blue-400 cursor-pointer transition-colors" />
+              <a 
+                href={socialLinks.facebook}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="transition-colors hover:scale-110 transform duration-200"
+                aria-label="Visit our Facebook page"
+              >
+                <Facebook className="h-5 w-5 text-blue-600 hover:text-blue-400 cursor-pointer transition-colors" />
+              </a>
+              <a 
+                href={socialLinks.twitter}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="transition-colors hover:scale-110 transform duration-200"
+                aria-label="Visit our Twitter page"
+              >
+                <Twitter className="h-5 w-5 text-blue-600 hover:text-blue-400 cursor-pointer transition-colors" />
+              </a>
+              <a 
+                href={socialLinks.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="transition-colors hover:scale-110 transform duration-200"
+                aria-label="Visit our LinkedIn page"
+              >
+                <Linkedin className="h-5 w-5 text-blue-600 hover:text-blue-400 cursor-pointer transition-colors" />
+              </a>
+              <a 
+                href={socialLinks.instagram}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="transition-colors hover:scale-110 transform duration-200"
+                aria-label="Visit our Instagram page"
+              >
+                <Instagram className="h-5 w-5 text-blue-600 hover:text-blue-400 cursor-pointer transition-colors" />
+              </a>
             </div>
           </div>
 
@@ -106,7 +146,7 @@ const Footer = () => {
             </div>
           </div>
         </div>
-
+        
         <div className="border-t border-gray-700 pt-8 mt-8 text-center">
           <p className="text-gray-400">© 2024 OWL AI. All rights reserved.</p>
         </div>

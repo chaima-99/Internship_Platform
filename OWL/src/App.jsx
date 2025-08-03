@@ -5,7 +5,7 @@ import Features from './components/Features';
 import Internships from './components/Internships';
 import About from './components/About';
 import Contact from './components/Contact';
-
+import Apply from './components/Apply';
 function App() {
   return (
     <BrowserRouter>
@@ -16,6 +16,7 @@ function App() {
         <Route path="/internships" element={<Internships />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/apply" element={<Apply />} />
       </Routes>
     </BrowserRouter>
   );

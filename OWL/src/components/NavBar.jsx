@@ -5,7 +5,7 @@ import owl from '../assets/owl.png';
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
-
+  
   const navLinks = [
     { name: 'Home', href: '/' },
     { name: 'Features', href: '/features' },
@@ -13,15 +13,15 @@ export default function Navbar() {
     { name: 'About', href: '/about' },
     { name: 'Contact', href: '/contact' }
   ];
-
+  
   const handleLinkClick = () => {
     setIsMenuOpen(false); 
   };
-
+  
   const isActiveLink = (href) => {
     return location.pathname === href;
   };
-
+  
   return (
     <nav className="fixed top-0 left-0 z-50 bg-blue-50 shadow-sm border-b border-gray-200" style={{ width: '100vw', margin: 0, padding: 0 }}>
       <div className="flex justify-between items-center h-16 px-4 sm:px-6 lg:px-8">
@@ -32,7 +32,7 @@ export default function Navbar() {
           </div>
           <span className="text-xl font-bold text-gray-900">OWL AI</span>
         </div>
-
+        
         {/* Desktop Navigation */}
         <div className="hidden md:block">
           <div className="ml-10 flex items-baseline space-x-8">
@@ -52,14 +52,17 @@ export default function Navbar() {
             ))}
           </div>
         </div>
-
+        
         {/* Apply Button - Desktop */}
         <div className="hidden md:block">
-          <button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-md text-sm font-medium transition-colors duration-200">
+          <Link 
+            to="/apply" 
+            className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-md text-sm font-medium transition-colors duration-200 inline-block"
+          >
             Apply
-          </button>
+          </Link>
         </div>
-
+        
         {/* Mobile menu button */}
         <div className="md:hidden">
           <button
@@ -91,7 +94,7 @@ export default function Navbar() {
           </button>
         </div>
       </div>
-
+      
       {/* Mobile Navigation Menu */}
       {isMenuOpen && (
         <div className="md:hidden">
@@ -110,11 +113,16 @@ export default function Navbar() {
                 {link.name}
               </Link>
             ))}
+            
             {/* Apply Button - Mobile */}
             <div className="px-3 py-2">
-              <button className="w-full bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-md text-sm font-medium transition-colors duration-200">
+              <Link 
+                to="/apply" 
+                onClick={handleLinkClick}
+                className="w-full bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-md text-sm font-medium transition-colors duration-200 block text-center"
+              >
                 Apply
-              </button>
+              </Link>
             </div>
           </div>
         </div>

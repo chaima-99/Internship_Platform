@@ -12,6 +12,7 @@ import {
   Zap
 } from 'lucide-react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 import Navbar from './Navbar';
 import Footer from './Footer';
 import heroimg from '../assets/heroimg.png'; 
@@ -38,11 +39,23 @@ import { useState, useEffect } from 'react';
 import {  Play,  Brain, Medal } from 'lucide-react';
 
 const HeroSection = () => {
- const [isVisible, setIsVisible] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     setIsVisible(true);
   }, []);
+
+  const handleStartJourney = () => {
+    navigate('/internships');
+  };
+
+  const handleWatchDemo = () => {
+    // You can either navigate to internships or open a demo modal
+    navigate('/internships');
+    // Or if you have a demo video/modal:
+    // setShowDemoModal(true);
+  };
 
   return (
     <section className="bg-gray-50 min-h-screen flex items-center pt-16 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
@@ -98,12 +111,18 @@ const HeroSection = () => {
               }`}
               style={{ transitionDelay: '0.4s' }}
             >
-              <button className="group bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg flex items-center justify-center gap-3">
+              <button 
+                onClick={handleStartJourney}
+                className="group bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg flex items-center justify-center gap-3"
+              >
                 Start Your Journey
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
               </button>
               
-              <button className="group bg-white hover:bg-gray-50 text-blue-600 border-2 border-blue-600 px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg flex items-center justify-center gap-3">
+              <button 
+                onClick={handleWatchDemo}
+                className="group bg-white hover:bg-gray-50 text-blue-600 border-2 border-blue-600 px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg flex items-center justify-center gap-3"
+              >
                 <Play className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
                 Watch Demo
               </button>
@@ -200,7 +219,7 @@ const StatsSection = () => {
 
     const timer = setTimeout(() => {
       animateCounter(2500, 'students');
-      animateCounter(7, 'domains', 1500);
+      animateCounter(10, 'domains', 1500);
       animateCounter(95, 'successRate', 1800);
       animateCounter(50, 'countries', 1600);
     }, 500);
@@ -514,8 +533,18 @@ const SuccessStories = () => {
 
 // CTA Section Component with Blue to Purple Gradient
 const CTASection = () => {
+  const navigate = useNavigate();
+
+  const handleStartInternship = () => {
+    navigate('/apply');
+  };
+
+  const handleExplorePrograms = () => {
+    navigate('/internships');
+  };
+
   return (
-    <section className="py-20 bg-gradient-to-r from-blue-600 via-blue-700 to-purple-700">
+    <section className="py-20 bg-gradient-to-l from-blue-600 via-blue-700 to-purple-700">
       <div className="w-full px-4 sm:px-6 lg:px-8 text-center">
         <motion.div {...fadeInUp} className="max-w-3xl mx-auto">
           <h2 className="text-4xl font-bold text-white mb-6">
@@ -527,6 +556,7 @@ const CTASection = () => {
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <motion.button 
+              onClick={handleStartInternship}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors flex items-center justify-center space-x-2"
@@ -536,6 +566,7 @@ const CTASection = () => {
             </motion.button>
             
             <motion.button 
+              onClick={handleExplorePrograms}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors flex items-center justify-center space-x-2"
