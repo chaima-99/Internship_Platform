@@ -286,7 +286,7 @@ This message was sent via the Owl AI contact form.
                 </div>
                 <div>
                   <h3 className="font-semibold text-gray-900 mb-1">Call Us</h3>
-                  <p className="text-blue-600 font-medium">+91 79811 94221</p>
+                  <p className="text-blue-600 font-medium">+91 7391 XX XXXX</p>
                   <p className="text-gray-600 text-sm">Mon-Fri, 9AM-6PM EST</p>
                 </div>
               </div>
